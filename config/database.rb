@@ -10,14 +10,14 @@ configure :test do
 end
 
 configure :development do
- set :database, {
-   adapter: 'postgresql',
-   encoding: 'utf8',
-   database: 'chatbot_development',
-   pool: 5,
-   username: 'postgres',
-   host: 'postgres'
- }
+    set :database, {
+      adapter: 'postgresql',
+      encoding: 'utf8',
+      database: 'chatbot_development',
+      pool: 5,
+      username: 'postgres',
+      host: 'postgres'
+    }
 end
 
 configure :production do

@@ -1,18 +1,18 @@
 FROM ruby:2.3-slim
-# Installing dependencies
+# Instala as nossas dependencias
 RUN apt-get update && apt-get install -qq -y --no-install-recommends \
       build-essential libpq-dev
-# Setting the path
+# Seta nosso path
 ENV INSTALL_PATH /chatbot
-# Creates the directory
+# Cria nosso diretório
 RUN mkdir -p $INSTALL_PATH
-# Our path is the main directory
+# Seta o nosso path como o diretório principal
 WORKDIR $INSTALL_PATH
-# Copy Gemfile to container
+# Copia o nosso Gemfile para dentro do container
 COPY Gemfile ./
-# Install Gems
+# Instala as Gems
 RUN bundle install
-# Copy code to container
+# Copia nosso código para dentro do container
 COPY . .
-# Run the server
+# Roda nosso servidor
 CMD rackup config.ru -o 0.0.0.0
