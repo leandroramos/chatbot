@@ -4,6 +4,7 @@ gem 'sinatra'
 gem "activerecord"
 gem "sinatra-activerecord"
 gem 'pg', '~> 0.21.0'
+gem 'pg_search'
 gem 'rake'
 
 
